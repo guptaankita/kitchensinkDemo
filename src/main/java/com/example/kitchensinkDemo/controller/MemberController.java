@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping(path = "api/kitchensink")
 public class MemberController {
 
-    private final MemberRegistration memberRegistration; // this is equivalent to studentservice
+    private final MemberRegistration memberRegistration;
 
     @Autowired
     public MemberController(MemberRegistration memberRegistration) {
@@ -34,17 +34,6 @@ public class MemberController {
         }
         return member.get();
     }
-
-//    @PostMapping(value = "/register", consumes ="application/json")
-//    public void createMember(@RequestBody Member member) throws Exception {
-//        try {
-//            System.out.println(member);
-//            memberRegistration.addNewMember(member);
-//
-//        } catch (Exception e) {
-//            String message = getRootErrorMessage(e);
-//        }
-//    }
 
     @PostMapping(value = "/register", consumes ="application/x-www-form-urlencoded")
     public String createMember(Member member) throws Exception {
