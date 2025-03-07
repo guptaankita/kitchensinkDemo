@@ -25,7 +25,7 @@ public class MemberController {
         return memberRegistration.getMembers();
     }
 
-    @GetMapping(path = "{id:[0-9][0-9]*}")
+    @GetMapping(path = "/{id:[0-9][0-9]*}")
     public Member getMemberById(@PathVariable("id") Long id) {
         Optional<Member> member = memberRegistration.getMemberById(id);
 
